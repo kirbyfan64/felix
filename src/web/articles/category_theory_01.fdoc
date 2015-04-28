@@ -1,16 +1,16 @@
 @title Categories
-@mathjax
-\(\DeclareMathOperator{\obj}{obj}\
-\DeclareMathOperator{\arr}{arr}\
-\DeclareMathOperator{\dom}{dom}\
-\DeclareMathOperator{\cod}{cod}\)
+@katex
+(\DeclareMathOperator{obj}{obj}\
+\DeclareMathOperator{arr}{arr}\
+\DeclareMathOperator{dom}{dom}\
+\DeclareMathOperator{cod}{cod})
 @h1 Categories
 @h2 Definition
-A category \(K\) is a collection of objects \[O = \obj K\] and arrows \[A = \arr K\] with the following
+A category \(K\) is a collection of objects \[O = obj K\] and arrows \[A = arr K\] with the following
 data:
 <ol>
-<li>Each arrow \(f\in A\) has a specified domain object \(\dom f = D\in O\) and codomain object
-\(\cod f = C\in O\) which is noted by stating \[f:D\rightarrow C\]</li>
+<li>Each arrow \(f\in A\) has a specified domain object \(dom f = D\in O\) and codomain object
+\(cod f = C\in O\) which is noted by stating \[f:D\rightarrow C\]</li>
 <li>if \(f:A\rightarrow B\) and \(g:B\rightarrow C\) then there is a designated
 composite arrow \[h:A\rightarrow C = f \cdot g = g \circ f\]
 </li>

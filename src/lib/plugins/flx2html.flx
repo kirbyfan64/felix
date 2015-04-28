@@ -249,7 +249,7 @@ fun valof[N](x:array[string * string,N],key:string) =>
 
 fun xlat_felix(t:string, dir:string): bool * string =
 {
-  var needs_mathjax = false;
+  var needs_katex = false;
   var mathcount = 0;
   var out = "";
   proc write_string(t:string) 
@@ -385,9 +385,9 @@ println$ "Package file basename is " + n;
     | #texid => { write_string (
         '<span class="tex_symbol" title="'+b+'">\\(' + txt2html b + '\\)</span>'
         ); 
-        needs_mathjax = true; 
-      }  // format with MathJax
-    | #mathmode => { needs_mathjax = true; ws; }
+        needs_katex = true; 
+      }  // format with KaTeX
+    | #mathmode => { needs_katex = true; ws; }
     | #id => 
       { 
         last_id = b;
@@ -570,7 +570,7 @@ thisch:> // same char, reconsider it
 fin:>
    //println "outof data, final write ..";
    w(); // whatever is left over gets written
-   return needs_mathjax, lc out;
+   return needs_katex, lc out;
 }
 }
 

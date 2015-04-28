@@ -42,16 +42,20 @@ code.inclusion {background-color:#D070D0; color:black; }
 </style>
 """;
 }
-mathjax := '''
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-        skipTags: ["script","noscript","style","textarea"]
-    }
-  });
-</script> 
+// put into <head> of document
+katex := '''
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.jsconfig=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css"/>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.js">
+</script>
+''';
+
+katex_suf := '''
+<script type="text/javascript">
+renderMathInElement(document.body);
 </script>
 ''';
 
@@ -66,12 +70,12 @@ xlat_felix = Dynlink::load-plugin-func2 [bool * string, string, string] (
 var filename = System::argv 1;
 if filename == "--style" do
   println$ Css4Html::flx_head;
-elif filename == "--mathjax" do
-  println$ mathjax;
+elif filename == "--katex" do
+  println$ katex;
 else
   eprintln$ "Formatting file " + filename;
   var b = load filename;
-  needs_mathjax', txt := xlat_felix (b,"");
+  needs_katex', txt := xlat_felix (b,"");
   println$ "<pre class='flxbg'>\n"+txt+"\n</pre>";
 done
 

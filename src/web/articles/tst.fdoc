@@ -24,7 +24,7 @@ product, we sometimes use the notation
 to denote it.
 
 @h2 Example: sets.
-In \(\bf Set\) the usual Cartesian product of two sets \(T_0\) and \(T_1\)\
+In \(Set\) the usual Cartesian product of two sets \(T_0\) and \(T_1\)\
 denoted by \(T_0 \times T_1\) consisting of pairs of values \((t_0, t_1)\) where
 \(t_0 \in T_0\) and \(t_1 \in T_1\) with projections
 \[

@@ -1,5 +1,5 @@
 @title Functors
-@mathjax
+@katex
 \(\DeclareMathOperator{\obj}{obj}\
 \DeclareMathOperator{\arr}{arr}\
 \DeclareMathOperator{\dom}{dom}\

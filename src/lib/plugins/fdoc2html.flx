@@ -109,7 +109,7 @@ var tangler_use_re2 = RE2 (Regdef::render tangler_use_regdef);
 object xlat_fdoc (t:string, filename:string) implements fdoc_t = {
 
   method fun whatami () => "Translator for " + filename;
-  method fun mathjax_required () => needs_mathjax;
+  method fun katex_required () => needs_katex;
   method fun html_raw () => out;
   method fun html_page () => page;
   method fun html_title () => title;
@@ -133,7 +133,7 @@ object xlat_fdoc (t:string, filename:string) implements fdoc_t = {
   var fdoc_frame = fdoc_frame_maker fdoc_frame_data;
 
 
-  var needs_mathjax = false;
+  var needs_katex = false;
   var out = "";
   proc write_string(t:string) 
   { 
@@ -255,8 +255,8 @@ next:>
   {
     sp;
     write_string("<pre class='flxbg'>"); 
-    needs_mathjax', txt := xlat_felix (b,"");
-    needs_mathjax |= needs_mathjax';
+    needs_katex', txt := xlat_felix (b,"");
+    needs_katex |= needs_katex';
     write_string(txt); // no parent!
     write_string("</pre>");
     ep; 
@@ -266,8 +266,8 @@ next:>
   {
     sp;
     write_string("<pre class='uncheckedflxbg'>"); 
-    needs_mathjax', txt := xlat_felix (b,"");
-    needs_mathjax |= needs_mathjax';
+    needs_katex', txt := xlat_felix (b,"");
+    needs_katex |= needs_katex';
     write_string(txt); // no parent!
     write_string("</pre>");
     ep; 
@@ -278,8 +278,8 @@ next:>
   {
     sp;
     write_string("<pre class='flxbg'>"); 
-    needs_mathjax', txt := xlat_ocaml(b,"");
-    needs_mathjax |= needs_mathjax';
+    needs_katex', txt := xlat_ocaml(b,"");
+    needs_katex |= needs_katex';
     write_string(txt); // no parent!
     write_string("</pre>");
     ep; 
@@ -289,8 +289,8 @@ next:>
   {
     sp;
     write_string("<pre class='flxbg'>"); 
-    needs_mathjax', txt := xlat_python(b,"");
-    needs_mathjax |= needs_mathjax';
+    needs_katex', txt := xlat_python(b,"");
+    needs_katex |= needs_katex';
     write_string(txt); // no parent!
     write_string("</pre>");
     ep; 
@@ -333,8 +333,8 @@ next:>
           flx = v3.1.string;
         done
       done
-      needs_mathjax', html := xlat_felix (flx,"");
-      needs_mathjax |= needs_mathjax';
+      needs_katex', html := xlat_felix (flx,"");
+      needs_katex |= needs_katex';
       write_string("<pre class='inclusion'>\n"+fname+"</pre>\n");
       write_string("<pre class='flxbg'>"); 
       write_string(html);
@@ -344,8 +344,8 @@ next:>
   proc flx_and_expect (fname:string)
   {
     var flx = get_flx(fname+".flx");
-    needs_mathjax', html := xlat_felix (flx,"");
-    needs_mathjax |= needs_mathjax';
+    needs_katex', html := xlat_felix (flx,"");
+    needs_katex |= needs_katex';
     write_string("<pre class='inclusion'>"+fname+".flx</pre>\n");
     write_string("<pre class='flxbg'>"); 
     write_string(html);
@@ -445,7 +445,7 @@ next:>
         elif b=="bug" do ep; sp 'bug'; write_string("<em>Bug: </em>");
         elif b=="fixed" do ep; sp 'fixed'; write_string("<em>Fixed: </em>");
         elif b=="done" do ep; sp 'done'; write_string("<em>Done: </em>");
-        elif b=="mathjax" do needs_mathjax = true;
+        elif b=="katex" do needs_katex = true;
 
         elif prefix (b,"title") do title = strip(b.[5 to]);
 

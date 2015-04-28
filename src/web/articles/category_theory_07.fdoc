@@ -1,4 +1,4 @@
-@mathjax
+@katex
 @h1 Category Extensions
 @h2 Free extension
 Let us have some category \(C\) wth sums, products,

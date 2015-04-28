@@ -3,6 +3,6 @@ interface fdoc_t {
   html_raw : 1 -> string;
   html_page : 1 -> string;
   html_title: 1 -> string;
-  mathjax_required: 1 -> bool;
+  katex_required: 1 -> bool;
 }
 

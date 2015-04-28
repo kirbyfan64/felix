@@ -1,5 +1,5 @@
 @title Arrays
-@mathjax
+@katex
 \(\DeclareMathOperator{\prj}{prj}\)
 \(\DeclareMathOperator{\aprj}{aprj}\)
 \(\DeclareMathOperator{\tprj}{tprj}\)

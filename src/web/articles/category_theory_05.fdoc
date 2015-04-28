@@ -1,5 +1,5 @@
 @title Sums
-@mathjax
+@katex
 \(\DeclareMathOperator{\inj}{inj}\)
 @h1 Sums
 In a category, given two objects \(T_0\) and \(T_1\) a sum is an

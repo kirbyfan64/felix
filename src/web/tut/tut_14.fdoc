@@ -49,7 +49,7 @@ Note the beautiful infix set membership operator is spelled:
 "2 \in a"
 @
 This is one of the standard TeX operators that the webserver
-displays using MathJax.
+displays using KaTeX.
 
 @h2 Array iterators
 
