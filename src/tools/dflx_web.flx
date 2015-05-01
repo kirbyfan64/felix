@@ -375,7 +375,7 @@ katex := '''
 
 katex_suf := '''
 <script type="text/javascript">
-renderMathInElement(document.body);
+renderMathInElement(document.body, {ignoredTags: ["script","noscript","style","textarea"] });
 </script>
 ''';
 
