@@ -1,6 +1,6 @@
 @title Math in Felix 
 @h1 Math in Felix
-Felix provides a set of symbols from \(\TeX\), \(\LaTeX\) and AmSTeX which will
+Felix provides a set of symbols from \(TeX\), \(LaTeX\) and AmSTeX which will
 display nicely with @{flx_web} using the excellent MathJax package
 as written in Felix program code. 
 
